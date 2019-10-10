@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "node-sass scss/style.scss css/style.css && postcss css/style.css -u autoprefixer -r --no-map && postcss css/style.css -u cssnano -o css/style.min.css --no-map",
+    "build:css": "node-sass scss/style.scss css/styles.css && postcss css/styles.css -u autoprefixer -r --no-map && postcss css/styles.css -u cssnano -o css/styles.min.css --no-map",
     "watch-sass": "nodemon build-sass"
   },
   "keywords": [],
