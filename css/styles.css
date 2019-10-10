@@ -33,11 +33,13 @@ strong {
   background-image: url("../images/dark-ribs.jpg");
   background-size: cover;
   background-position: center;
+  /* remove display below */
   display: flex;
   min-height: 50vh;
   height: auto; }
 
 .bbq-banner {
+  /* min-height: 100% */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
