@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  color: #5a5a5a;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  font-weight: 900;
+  color: #f18119;
+}
+
+strong {
+  font-weight: 900;
+}
+
+.small {
+  font-size: 0.625rem;
+  color: #989898;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/** bbq banner **/
+
+.section-bbq {
+  background-image: url('../images/dark-ribs.jpg');
+  background-size: cover;
+  background-position: center;
+
+  // display property is to fix child flex container to set height to 100%;
+  // sometimes just setting child height to 100% works, but this is proper way.
+  display: flex;
+  min-height: 50vh;
+  height: auto;
+}
+
+.bbq-banner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.bbq-banner-teaser-container {
+  display: flex;
+  justify-content: center;
+  order: -1;
+}
+
+.bbq-banner-teaser {
+  display: inline-block;
+  color: #f18119;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 1.125px;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 8px;
+    top: -10px;
+    position: absolute;
+    background: #ffa51d;
+    background: linear-gradient(90deg, #ffa51d 0%, #ff713b 100%);
+  }
+}
+
+.bbq-banner-title,
+.bbq-banner-subtitle {
+  text-align: center;
+}
+
+.bbq-banner-subtitle {
+  text-transform: uppercase;
+}
+
+.bbq-banner-title {
+  span {
+    display: block;
+    font-weight: 900;
+  }
+}
+
+/** register **/
+
+.container-register {
+  max-width: 400px;
+}
+
+.section-register {
+  padding: 1em 0;
+  padding-bottom: 5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  &.container {
+    width: 75%;
+  }
+}
+
+.register-title,
+.register-info,
+.register-subtitle {
+  text-align: center;
+}
+
+.register-info {
+  color: #838383;
+  line-height: 1.5;
+}
+
+.register-title {
+  color: #000;
+  margin-bottom: 0;
+}
+
+.register-subtitle {
+  font-size: 1rem;
+  color: #f18119;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.register-permission-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-permission {
+  text-align: center;
+}
+
+.btn {
+  border-style: none;
+  cursor: pointer;
+}
+
+.register-input {
+  border-style: none;
+  box-shadow: inset 0px 0px 0 1px #818181;
+
+  &::placeholder {
+    text-align: center;
+    color: #8181818a;
+  }
+}
+
+.register-btn {
+  background: #ff713b;
+  background: linear-gradient(90deg, #ffa51d 0%, #ff713b 100%);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: 500ms;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    /* keyframes won't work for transtion unlease you use javascript for onleave */
+
+    /* hacky solution for gradient button since this forces the button to be grayscale.
+    This will only work if you want button to have black background with white text.
+    Luckily this is probably the best color for attention/accessability */
+
+    filter: grayscale(100%) brightness(70%) contrast(2);
+    background: linear-gradient(90deg, #ffa51d 0%, #ff713b 0%);
+    color: #fff;
+    // filter: invert(136%);
+    // color: #000;
+  }
+}
+
+.register-btn,
+.register-input {
+  padding: 0.8rem 1rem;
+  margin: 0.5em 0;
+  border-radius: 8px;
+}
+
+@media (min-width: 800px) {
+  .section-bbq,
+  .section-register {
+    min-height: 100vh;
+  }
+
+  .container-flex {
+    display: flex;
+  }
+
+  body {
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  small {
+    font-size: 0.625rem;
+  }
+
+  .section-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 400px;
+  }
+
+  .section-bbq {
+    flex-basis: 70%;
+  }
+
+  .bbq-banner-teaser-container {
+    flex-basis: 50%;
+  }
+  .bbq-banner-title {
+    margin-bottom: 0;
+  }
+
+  .bbq-banner-subtitle {
+    flex-basis: 50%;
+  }
+
+  .register-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bbq-banner-title {
+    span {
+      display: inline;
+    }
+  }
+}
